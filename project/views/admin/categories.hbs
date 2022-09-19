@@ -1,0 +1,56 @@
+<div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Category</strong> Form
+                        </div>
+                        <div class="card-body card-block">
+
+                            <form action="/admin/categories" method="post" class="">
+                                <div class="form-group"><label 
+                                        class=" form-control-label">Category</label>
+                                    <input type="text" id="nf-email" name="category" placeholder="Enter Category"
+                                        class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Add Category
+                            </button>
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Basic Table</strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Index</th>
+                                        <th scope="col">categories</th>
+                                        <th>deleting category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each allCategories}}
+                                    <tr>
+                                        <th scope="row">{{inc @index}}</th>
+                                        <td>{{this.category}}</td>
+                                         <td><a href="/admin/deleteCategory/{{this._id}}" class="btn btn-danger">Delete</a></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

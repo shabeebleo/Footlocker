@@ -1,0 +1,64 @@
+<body>
+    <div id="right-panel" class="right-panel">
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Product List</strong>
+                            </div>
+                            <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th class="serial">#</th>
+                                            <th class="avatar">Avatar</th>
+                                            <th>ID</th>
+                                            <th>Product Name</th>
+                                            <th>Brand</th>
+                                            <th>Categories</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Discription</th>
+                                            <th>Delete</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each allProducts}}
+                                        <tr>
+                                            <td class="serial">{{inc @index}}</td>
+                                            <td class="avatar">
+                                                <div class="round-img">
+                                                    <a href="#"><img class="" style="width:50px;height:auto"
+                                                            src="/product-images/{{this.images.[0]}}" alt=""></a>
+                                                </div>
+                                            </td>
+                                            <td>{{this._id}}</td>
+                                            <td> <span class="productName">{{this.Product}}</span> </td>
+                                            <td> <span class="">{{this.Brand}}</span> </td>
+                                            <td><span class="name">{{this.Categories}}</span></td>
+                                            <td> <span class="name">{{this.Quantity}}</span> </td>
+
+                                            <td> <span class="product">{{this.Price}}</span> </td>
+                                            <td><span class="name">{{this.Discription}}</span></td>
+                                            <td>
+                                                <a href="/admin/DeleteProduct/{{this._id}}" class="btn btn-danger"
+                                                    onclick="return confirm('Are you want delete {{ this.username}}')">Delete</a>
+                                            </td>
+                                            <td>
+                                                <a href="/admin/editProduct/{{this._id}}" class="btn btn-warning"
+                                                    onclick="return confirm('Are you want edit {{ this.username}}')">Edit</a>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>

@@ -1,0 +1,35 @@
+<body>
+
+
+	<!--================SignUp Box Area =================-->
+	<section class="login_box_area section_gap">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-6 mx-auto ">
+					<div class="login_form_inner">
+						<h3>Profile</h3>
+						<form class="row login_form" action="/signUp" method="post">
+							<div class="col-md-12 form-group">
+								<input type="text" value="{{userDetails.username}}"  class="form-control" id="Username" name="username"
+									placeholder="Username" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Username'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="email" value="{{userDetails.email}}" class="form-control" id="Email" name="email" placeholder="Email"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+							</div>
+							<div class="col-md-12 form-group">
+								<input type="tel" value="{{userDetails.phone}}" class="form-control" id="Phone" name="phone"
+									placeholder="Phone number" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Phone number'">
+							</div>
+						
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End SignUp Box Area =================-->
+</body>

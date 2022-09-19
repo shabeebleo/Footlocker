@@ -1,0 +1,79 @@
+<body>
+    <div id="right-panel" class="right-panel">
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Table</a></li>
+                                    <li class="active">Basic table</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Custom Table</strong>
+                            </div>
+                            <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th class="serial">#</th>
+                                            <th>User ID</th>
+                                            <th>Customer Name </th>
+                                            <th>Email</th>
+                                            <th>PhoneNumber</th>
+
+                                            <th>Address</th>
+                                            <th>Block</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each users}}
+                                        <tr>
+                                            <td class="serial">1.</td>
+                                            <td>{{this._id}}</td>
+                                            <td> <span class="product">{{this.username}}</span> </td>
+                                            <td> <span class="name">{{this.email}}</span> </td>
+                                            <td> <span class="name">{{this.phone}}</span> </td>
+                                            <td> <span class="name">{{this.address}}</span> </td>
+                                            <td>
+                                                {{#if this.Active}}
+                                                <a href="/admin/blockUser/{{this._id}}" class="btn btn-danger"
+                                                    onclick="return confirm('Are you want block {{ this.username}}')">Block</a>
+                                                {{else}}
+                                                <a href="/admin/unblockUser/{{this._id}}" class="btn btn-success"
+                                                    onclick="return confirm('Are you want Unblock {{ this.username}}')">Unblock</a>
+                                                {{/if}}
+                                            </td>
+
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>

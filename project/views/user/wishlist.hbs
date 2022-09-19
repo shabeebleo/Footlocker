@@ -1,0 +1,111 @@
+
+<body>
+
+    <!-- Start Header Area -->
+	
+	<!-- End Header Area -->
+
+    <!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Shopping Cart</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="category.html">Cart</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+    <!--================Cart Area =================-->
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                
+                                <th scope="col">Delete</th>
+                                <th scope="col">Total</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each products}}
+                            <tr>
+                                {{!-- {{#each this.product}} when it was array --}}
+
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex ">
+                                            
+                                            <img src="/product-images/{{this.product.images.[0]}}" alt="" style="width: 80px;height: 80px;">
+                                        </div>
+                                        <div class="media-body">
+                                            <p>{{this.product.Product}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5>{{this.product.Price}}</h5>
+                                </td>
+                                {{!-- {{/each}} --}}
+                            
+                                <td>
+                                   <a href="/delete-wishlist-product" onclick="delWishlistPro('{{this._id}}','{{this.product._id}}')" class="btn btn-danger">Delete</a>
+                                </td>
+                               
+                                <td>
+                                    
+                                  <a class="primary-btn"  onclick="addToCart('{{this.product._id}}')">Add to Cart</a>
+                                </td>
+                                
+                            </tr>
+
+                            {{/each}}
+                           
+                         
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Cart Area =================-->
+
+    <!-- start footer Area -->
+    
+    <!-- End footer Area -->
+<script>
+
+
+
+function delWishlistPro(wishlistId,proId){
+    $.ajax({
+        url:'/delete-wishlist-product',
+        data:{
+            wishlist:wishlistId,
+            product:proId
+        },
+        method:'post',
+        success:(response)=>{
+            
+            alert("product removed from wislist")
+             location.reload()
+        }
+    })
+}
+
+</script>
+    
+
+

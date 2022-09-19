@@ -1,0 +1,105 @@
+<body>
+    <div id="right-panel" class="right-panel">
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Basic Form</strong> Elements
+                        </div>
+                        <div class="card-body card-block">
+                            <form action="/admin/editProduct/{{productDetails._id}}" method="post" class="form-horizontal"
+                                enctype="multipart/form-data">
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input"
+                                            class=" form-control-label">Product Name</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="Product"
+                                            placeholder="Product Name" value="{{productDetails.Product}}"
+                                            class="form-control"><small class="form-text text-muted"></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input"
+                                            class=" form-control-label">Brand</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="Brand"
+                                            placeholder="Brand" value="{{productDetails.Brand}}"
+                                            class="form-control"><small class="form-text text-muted"></small></div>
+                                </div>
+                                <div class="row form-group">
+
+                                    <div class="col col-md-3"><label for="text-input"
+                                            class=" form-control-label">Categories</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="Categories" id="select" class="form-control">
+                                            {{#each fullcategories}}
+                                            <option {{#if this.flag}} selected {{/if}} value="{{this.category}}">{{this.category}}
+                                            </option>                                        
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input"
+                                            class=" form-control-label">Quantity</label></div>
+                                    <div class="col-12 col-md-9"><input type="number"
+                                            value="{{productDetails.Quantity}}" id="text-input" name="Quantity"
+                                            placeholder="Quantity" class="form-control"><small
+                                            class="form-text text-muted"></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input"
+                                            class=" form-control-label">Price</label></div>
+                                    <div class="col-12 col-md-9"><input type="number" value="{{productDetails.Price}}"
+                                            id="text-input" name="Price" placeholder="Price" class="form-control"><small
+                                            class="form-text text-muted"></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="textarea-input"
+                                            class=" form-control-label">Discription</label></div>
+                                    <div class="col-12 col-md-9"><textarea name="Discription" id="textarea-input"
+                                            rows="9" placeholder="Discription"
+                                            class="form-control">{{productDetails.Discription}}</textarea></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <td class="avatar">
+                                    
+                                         <div class="round-img">
+                                            <a href="#"><img class="" style="width:50px;height:50px"
+                                                    src="/product-images/{{productDetails.images.[0]}}" alt=""></a>
+                                        </div>
+                                 
+                                         
+                                        <div class="round-img">
+                                            <a href="#"><img class="" style="width:50px;height:50px"
+                                                    src="/product-images/{{productDetails.images.[1]}}" alt=""></a>
+                                        </div>
+                                  
+                                        <div class="round-img">
+                                            <a href="#"><img class="" style="width:50px;height:50px"
+                                                    src="/product-images/{{productDetails.images.[2]}}" alt=""></a>
+                                        </div>
+                                  
+                                    </td>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="file-multiple-input"
+                                            class=" form-control-label">Multiple File input</label></div>
+                                    <div class="col-12 col-md-9"><input type="file" id="file-multiple-input"
+                                            name="image" multiple class="form-control-file"></div>
+                                </div>
+                                <div class="">
+                                    <button type="submit" class="btn btn-success">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
